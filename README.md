@@ -109,6 +109,6 @@ MIT License
 
 欢迎提交Issue和Pull Request来改进这个项目。
 
-## 联系方式
+## 开发者
 
-如有问题或建议，请联系：[your.email@example.com]
+**whatsbme** - GHLan自定义词典项目

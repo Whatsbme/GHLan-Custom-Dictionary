@@ -218,7 +218,7 @@ GHLan自定义字典项目已经完成了所有核心功能的开发，包括：
 
 **项目版本**: 1.5.0  
 **完成日期**: 2025年9月  
-**开发团队**: GHLan Team  
+**开发人**:  whatsbme
 **技术栈**: Python + Kivy + KivyMD + SQLAlchemy
 
 

@@ -252,8 +252,8 @@ A: 1. 在services/export_service.py中添加新的导出方法
 
 ## 联系信息
 
-如有问题或建议，请联系：
-- 邮箱：your.email@example.com
-- GitHub：https://github.com/yourusername/offline-dictionary
-- 项目主页：https://github.com/yourusername/offline-dictionary
+开发者信息：
+- 开发者：whatsbme
+- GitHub：https://github.com/Whatsbme/GHLan-Custom-Dictionary
+- 项目主页：https://github.com/Whatsbme/GHLan-Custom-Dictionary
 

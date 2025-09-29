@@ -18,12 +18,11 @@ with open('requirements.txt', 'r', encoding='utf-8') as f:
 setup(
     name="offline-dictionary",
     version="1.0.0",
-    author="Your Name",
-    author_email="your.email@example.com",
+    author="whatsbme",
     description="一个功能完整的移动端Python离线词典应用",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/offline-dictionary",
+    url="https://github.com/Whatsbme/GHLan-Custom-Dictionary",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 4 - Beta",
@@ -63,8 +62,8 @@ setup(
     },
     keywords="dictionary, offline, mobile, kivy, sqlite, education",
     project_urls={
-        "Bug Reports": "https://github.com/yourusername/offline-dictionary/issues",
-        "Source": "https://github.com/yourusername/offline-dictionary",
-        "Documentation": "https://github.com/yourusername/offline-dictionary/wiki",
+        "Bug Reports": "https://github.com/Whatsbme/GHLan-Custom-Dictionary/issues",
+        "Source": "https://github.com/Whatsbme/GHLan-Custom-Dictionary",
+        "Documentation": "https://github.com/Whatsbme/GHLan-Custom-Dictionary/wiki",
     },
 )
