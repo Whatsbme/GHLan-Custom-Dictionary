@@ -1,0 +1,123 @@
+{
+  "name": "水墨主题",
+  "description": "传统水墨画风格主题，以墨色为主，朱砂点缀",
+  "version": "1.0.0",
+  "author": "GHLan Team",
+  "colors": {
+    "primary": {
+      "ink_black": "#2C2C2C",
+      "ink_dark": "#4A4A4A",
+      "ink_medium": "#6B6B6B",
+      "ink_light": "#8A8A8A",
+      "ink_pale": "#B0B0B0"
+    },
+    "accent": {
+      "water_blue": "#4A90A4",
+      "water_light": "#7BB3C4",
+      "water_pale": "#A8D0D9"
+    },
+    "highlight": {
+      "cinnabar": "#D2691E",
+      "cinnabar_light": "#E07B3A",
+      "cinnabar_pale": "#F0A366"
+    },
+    "background": {
+      "paper_white": "#FEFEFE",
+      "paper_cream": "#F5F5F0",
+      "paper_warm": "#F0F0E8"
+    },
+    "border": {
+      "dark": "#8A8A8A",
+      "light": "#D0D0D0"
+    },
+    "shadow": {
+      "soft": "#E0E0E0",
+      "medium": "#C0C0C0",
+      "dark": "#A0A0A0"
+    }
+  },
+  "typography": {
+    "font_family": "Roboto",
+    "font_sizes": {
+      "h1": 24,
+      "h2": 20,
+      "h3": 18,
+      "h4": 16,
+      "h5": 14,
+      "h6": 12,
+      "body": 14,
+      "caption": 12
+    }
+  },
+  "spacing": {
+    "xs": 4,
+    "sm": 8,
+    "md": 16,
+    "lg": 24,
+    "xl": 32,
+    "xxl": 48
+  },
+  "border_radius": {
+    "sm": 4,
+    "md": 8,
+    "lg": 12,
+    "xl": 16
+  },
+  "elevation": {
+    "none": 0,
+    "sm": 2,
+    "md": 4,
+    "lg": 8,
+    "xl": 16
+  },
+  "components": {
+    "card": {
+      "background": "paper_white",
+      "border": "light",
+      "border_radius": "lg",
+      "elevation": "sm",
+      "padding": "md"
+    },
+    "button": {
+      "primary": {
+        "background": "ink_black",
+        "text": "paper_white",
+        "border_radius": "md",
+        "elevation": "sm"
+      },
+      "accent": {
+        "background": "cinnabar",
+        "text": "paper_white",
+        "border_radius": "md",
+        "elevation": "sm"
+      },
+      "secondary": {
+        "background": "water_blue",
+        "text": "paper_white",
+        "border_radius": "md",
+        "elevation": "sm"
+      }
+    },
+    "input": {
+      "background": "paper_white",
+      "border": "light",
+      "border_focus": "ink_black",
+      "border_radius": "md",
+      "text": "ink_black",
+      "hint": "ink_light"
+    },
+    "toolbar": {
+      "background": "paper_white",
+      "text": "ink_black",
+      "elevation": "md",
+      "border": "light"
+    }
+  }
+}
+
+
+
+
+
+
+

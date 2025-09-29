@@ -1,0 +1,139 @@
+{
+  "themes": [
+    {
+      "name": "经典蓝",
+      "id": "classic_blue",
+      "description": "经典蓝色主题，专业而优雅",
+      "colors": {
+        "primary": "#1976D2",
+        "primary_dark": "#1565C0",
+        "primary_light": "#BBDEFB",
+        "accent": "#FF4081",
+        "background": "#FAFAFA",
+        "surface": "#FFFFFF",
+        "text_primary": "#212121",
+        "text_secondary": "#757575",
+        "divider": "#BDBDBD"
+      }
+    },
+    {
+      "name": "森林绿",
+      "id": "forest_green",
+      "description": "森林绿色主题，清新自然",
+      "colors": {
+        "primary": "#388E3C",
+        "primary_dark": "#2E7D32",
+        "primary_light": "#C8E6C9",
+        "accent": "#FF9800",
+        "background": "#F1F8E9",
+        "surface": "#FFFFFF",
+        "text_primary": "#1B5E20",
+        "text_secondary": "#689F38",
+        "divider": "#C8E6C9"
+      }
+    },
+    {
+      "name": "日落橙",
+      "id": "sunset_orange",
+      "description": "日落橙色主题，温暖而充满活力",
+      "colors": {
+        "primary": "#F57C00",
+        "primary_dark": "#E65100",
+        "primary_light": "#FFE0B2",
+        "accent": "#9C27B0",
+        "background": "#FFF3E0",
+        "surface": "#FFFFFF",
+        "text_primary": "#E65100",
+        "text_secondary": "#FF9800",
+        "divider": "#FFE0B2"
+      }
+    },
+    {
+      "name": "深海蓝",
+      "id": "deep_blue",
+      "description": "深海蓝色主题，深邃而神秘",
+      "colors": {
+        "primary": "#0D47A1",
+        "primary_dark": "#0A3A7A",
+        "primary_light": "#BBDEFB",
+        "accent": "#FF6F00",
+        "background": "#E3F2FD",
+        "surface": "#FFFFFF",
+        "text_primary": "#0D47A1",
+        "text_secondary": "#1976D2",
+        "divider": "#BBDEFB"
+      }
+    },
+    {
+      "name": "玫瑰粉",
+      "id": "rose_pink",
+      "description": "玫瑰粉色主题，温柔而浪漫",
+      "colors": {
+        "primary": "#C2185B",
+        "primary_dark": "#AD1457",
+        "primary_light": "#F8BBD9",
+        "accent": "#4CAF50",
+        "background": "#FCE4EC",
+        "surface": "#FFFFFF",
+        "text_primary": "#880E4F",
+        "text_secondary": "#E91E63",
+        "divider": "#F8BBD9"
+      }
+    },
+    {
+      "name": "石墨灰",
+      "id": "graphite_gray",
+      "description": "石墨灰色主题，现代而简约",
+      "colors": {
+        "primary": "#424242",
+        "primary_dark": "#212121",
+        "primary_light": "#E0E0E0",
+        "accent": "#FF5722",
+        "background": "#FAFAFA",
+        "surface": "#FFFFFF",
+        "text_primary": "#212121",
+        "text_secondary": "#757575",
+        "divider": "#E0E0E0"
+      }
+    },
+    {
+      "name": "紫罗兰",
+      "id": "violet",
+      "description": "紫罗兰主题，高贵而优雅",
+      "colors": {
+        "primary": "#7B1FA2",
+        "primary_dark": "#4A148C",
+        "primary_light": "#E1BEE7",
+        "accent": "#FFC107",
+        "background": "#F3E5F5",
+        "surface": "#FFFFFF",
+        "text_primary": "#4A148C",
+        "text_secondary": "#9C27B0",
+        "divider": "#E1BEE7"
+      }
+    },
+    {
+      "name": "翡翠绿",
+      "id": "emerald_green",
+      "description": "翡翠绿色主题，清新而富有生机",
+      "colors": {
+        "primary": "#00695C",
+        "primary_dark": "#004D40",
+        "primary_light": "#B2DFDB",
+        "accent": "#FF5722",
+        "background": "#E0F2F1",
+        "surface": "#FFFFFF",
+        "text_primary": "#004D40",
+        "text_secondary": "#00695C",
+        "divider": "#B2DFDB"
+      }
+    }
+  ]
+}
+
+
+
+
+
+
+

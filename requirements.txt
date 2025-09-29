@@ -1,0 +1,21 @@
+# GUI Framework
+kivy>=2.2.0
+kivymd>=1.2.0
+
+# Database
+SQLAlchemy>=2.0.0
+
+# File Processing
+Pillow>=10.0.0
+openpyxl>=3.1.0
+reportlab>=4.0.0
+
+# Utilities
+requests>=2.31.0
+python-dateutil>=2.8.0
+
+# Development
+pytest>=7.4.0
+
+# Mobile Build
+buildozer>=1.5.0

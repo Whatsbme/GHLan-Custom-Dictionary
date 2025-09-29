@@ -1,0 +1,143 @@
+{
+  "fonts": [
+    {
+      "name": "默认字体",
+      "id": "default",
+      "family": "Roboto",
+      "description": "系统默认字体，清晰易读",
+      "supported_languages": ["zh", "en", "la"],
+      "file_path": null,
+      "is_system": true
+    },
+    {
+      "name": "黑体",
+      "id": "simhei",
+      "family": "SimHei",
+      "description": "中文黑体，粗壮有力",
+      "supported_languages": ["zh"],
+      "file_path": "assets/fonts/simhei.ttf",
+      "is_system": false,
+      "fallback": "default"
+    },
+    {
+      "name": "宋体",
+      "id": "simsun",
+      "family": "SimSun",
+      "description": "中文宋体，传统典雅",
+      "supported_languages": ["zh"],
+      "file_path": "assets/fonts/simsun.ttc",
+      "is_system": false,
+      "fallback": "default"
+    },
+    {
+      "name": "楷体",
+      "id": "kaiti",
+      "family": "KaiTi",
+      "description": "中文楷体，书法风格",
+      "supported_languages": ["zh"],
+      "file_path": "assets/fonts/kaiti.ttf",
+      "is_system": false,
+      "fallback": "default"
+    },
+    {
+      "name": "仿宋",
+      "id": "fangsong",
+      "family": "FangSong",
+      "description": "中文仿宋，古典风格",
+      "supported_languages": ["zh"],
+      "file_path": "assets/fonts/fangsong.ttf",
+      "is_system": false,
+      "fallback": "default"
+    },
+    {
+      "name": "微软雅黑",
+      "id": "microsoft_yahei",
+      "family": "Microsoft YaHei",
+      "description": "微软雅黑，现代简洁",
+      "supported_languages": ["zh"],
+      "file_path": "assets/fonts/msyh.ttf",
+      "is_system": false,
+      "fallback": "default"
+    },
+    {
+      "name": "思源黑体",
+      "id": "source_han_sans",
+      "family": "Source Han Sans",
+      "description": "思源黑体，开源字体",
+      "supported_languages": ["zh", "en", "ja", "ko"],
+      "file_path": "assets/fonts/SourceHanSansCN-Regular.otf",
+      "is_system": false,
+      "fallback": "default"
+    },
+    {
+      "name": "思源宋体",
+      "id": "source_han_serif",
+      "family": "Source Han Serif",
+      "description": "思源宋体，开源字体",
+      "supported_languages": ["zh", "en", "ja", "ko"],
+      "file_path": "assets/fonts/SourceHanSerifCN-Regular.otf",
+      "is_system": false,
+      "fallback": "default"
+    },
+    {
+      "name": "拉丁字体",
+      "id": "latin",
+      "family": "Times New Roman",
+      "description": "拉丁文字体，学术风格",
+      "supported_languages": ["en", "la"],
+      "file_path": "assets/fonts/times.ttf",
+      "is_system": false,
+      "fallback": "default"
+    },
+    {
+      "name": "等宽字体",
+      "id": "monospace",
+      "family": "Consolas",
+      "description": "等宽字体，代码显示",
+      "supported_languages": ["en", "la"],
+      "file_path": "assets/fonts/consolas.ttf",
+      "is_system": false,
+      "fallback": "default"
+    }
+  ],
+  "font_sizes": {
+    "xs": 10,
+    "sm": 12,
+    "md": 14,
+    "lg": 16,
+    "xl": 18,
+    "2xl": 20,
+    "3xl": 24,
+    "4xl": 28,
+    "5xl": 32,
+    "6xl": 36
+  },
+  "font_weights": {
+    "light": 300,
+    "normal": 400,
+    "medium": 500,
+    "bold": 700,
+    "black": 900
+  },
+  "line_heights": {
+    "tight": 1.2,
+    "normal": 1.4,
+    "relaxed": 1.6,
+    "loose": 1.8
+  },
+  "default_settings": {
+    "primary_font": "default",
+    "chinese_font": "simhei",
+    "latin_font": "latin",
+    "monospace_font": "monospace",
+    "base_size": 14,
+    "line_height": "normal"
+  }
+}
+
+
+
+
+
+
+
