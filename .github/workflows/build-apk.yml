@@ -1,0 +1,136 @@
+name: Build APK for Android
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y openjdk-11-jdk zip unzip libncurses5-dev libffi-dev libssl-dev
+        sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/java-11-openjdk-amd64/bin/java 1
+        
+    - name: Install Python dependencies  
+      run: |
+        python -m pip install --upgrade pip
+        pip install --no-cache-dir buildozer[dev] cython numpy pillow kivy kivymd sqlalchemy reportlab
+        
+    - name: Set up Buildozer environment
+      run: |
+        echo "y" | buildozer init
+        # 修改buildozer.spec配置
+        sed -i 's/android.sdk_path/#android.sdk_path/' buildozer.spec
+        sed -i 's/android.ndk_path/#android.ndk_path/' buildozer.spec
+        
+    - name: Download Android SDK
+      run: |
+        wget -q https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip
+        unzip -q commandlinetools-linux-9477386_latest.zip -d android-sdk
+        
+        # 设置SDK环境变量
+        export ANDROID_HOME=$(pwd)/android-sdk
+        export ANDROID_SDK_ROOT=$ANDROID_HOME
+        
+        # 创建目录结构
+        mkdir -p $ANDROID_HOME/cmdline-tools/latest
+        mv android-sdk/cmdline-tools/* $ANDROID_HOME/cmdline-tools/latest/
+        
+        # 添加到PATH
+        echo "$ANDROID_HOME/cmdline-tools/latest/bin" >> $GITHUB_PATH
+        echo "$ANDROID_HOME/platform-tools" >> $GITHUB_PATH
+        
+    - name: Install Android SDK components
+      env:
+        ANDROID_HOME: ${{ github.workspace }}/android-sdk
+        ANDROID_SDK_ROOT: ${{ github.workspace }}/android-sdk
+      run: |
+        echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
+        $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platforms;android-30"
+        $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "build-tools;30.0.3"
+        $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platform-tools"
+        
+    - name: Configure Buildozer with Android SDK path
+      run: |
+        echo "" >> buildozer.spec
+        echo "[android]" >> buildozer.spec  
+        echo "android.sdk_path = ${{ github.workspace }}/android-sdk" >> buildozer.spec
+        echo "android.ndk_path = " >> buildozer.spec
+        
+    - name: Build APK
+      env:
+        ANDROID_HOME: ${{ github.workspace }}/android-sdk
+        ANDROID_SDK_ROOT: ${{ github.workspace }}/android-sdk
+        JAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
+      run: |
+        export PATH="$JAVA_HOME/bin:$PATH"
+        buildozer android debug
+        
+    - name: Upload APK artifact
+      uses: actions/upload-artifact@v3
+      if: success()
+      with:
+        name: ghlan-apk
+        path: bin/*.apk
+        retention-days: 30
+        
+    - name: Create APK Release (on main branch)
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      uses: softprops/action-gh-release@v1
+      with:
+        name: "GHLan APK v${{ github.run_number }}"
+        body: |
+          ## 📱 GHLan自定义词典 APK
+          
+          ### 📦 下载说明
+          - 点击下方的 `.apk` 文件下载
+          - 在手机上启用"未知来源安装"
+          - 直接安装使用
+          
+          ### 🔧 构建信息
+          - **构建时间**: ${{ github.run_number }}
+          - **代码版本**: ${{ github.sha }}
+          - **触发分支**: ${{ github.ref_name }}
+          
+          ### 📋 安装步骤
+          1. 下载 APK 文件到手机
+          2. 在设置中启用"未知来源应用"
+          3. 点击 APK 文件安装
+          4. 启动应用开始使用
+          
+        files: bin/*.apk
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Build Summary
+      if: always()
+      run: |
+        echo "## 🏗️ 构建结果 ##" >> $GITHUB_STEP_SUMMARY
+        echo "- **作业状态**: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **构建时间**: $(date)" >> $GITHUB_STEP_SUMMARY
+        echo "- **分支**: ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **提交**: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+        
+        if [ -d "bin" ] && [ "$(ls -A bin)" ]; then
+          echo "- **APK状态**: ✅ 构建成功" >> $GITHUB_STEP_SUMMARY
+          echo "- **下载**: 查看Artifacts或Releases下载APK" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "- **APK状态**: ❌ 构建失败" >> $GITHUB_STEP_SUMMARY
+          echo "- **详细信息**: 查看上方日志" >> $GITHUB_STEP_SUMMARY
+        fi
