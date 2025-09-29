@@ -1,4 +1,4 @@
-# GHL自定义词典 (GALan custom Dictionary)
+# GHL自定义词典 (GaHaLan custom Dictionary)
 
 一个功能完整的移动端Python离线词典应用，支持本地词库管理、搜索、编辑、导出等功能。
 
