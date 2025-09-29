@@ -1,4 +1,4 @@
-# 离线词典 (Offline Dictionary)
+# GHL自定义词典 (GALan custom Dictionary)
 
 一个功能完整的移动端Python离线词典应用，支持本地词库管理、搜索、编辑、导出等功能。
 
